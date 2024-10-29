@@ -1,4 +1,3 @@
 .venv/
 
-dataset/training
-dataset/test
+dataset/opentt
