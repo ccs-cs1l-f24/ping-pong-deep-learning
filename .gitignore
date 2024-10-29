@@ -1,0 +1,4 @@
+.venv/
+
+dataset/training
+dataset/testing

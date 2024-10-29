@@ -1,0 +1,4 @@
+path: .
+train: training/images
+val: training/val
+test: test/images
