@@ -1,3 +1,4 @@
 .venv/
 
-dataset/opentt
+dataset/*
+!dataset/opentt.yaml
