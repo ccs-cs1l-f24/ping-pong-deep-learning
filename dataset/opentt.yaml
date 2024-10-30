@@ -1,4 +1,5 @@
 path: .
-train: training/images
-val: training/val
-test: test/images
+train: images/train # Train images (relative to 'path')
+
+names:
+  0: ball

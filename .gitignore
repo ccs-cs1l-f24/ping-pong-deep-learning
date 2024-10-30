@@ -2,3 +2,5 @@
 
 dataset/*
 !dataset/opentt.yaml
+
+runs/*
