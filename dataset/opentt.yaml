@@ -1,5 +1,11 @@
-path: .
-train: images/train # Train images (relative to 'path')
+# OpenTT Configuration File
 
+train: /Users/dylan/Documents/GitHub/ping-pong-deep-learning/dataset/images/train
+val: /Users/dylan/Documents/GitHub/ping-pong-deep-learning/dataset/images/val
+
+# Number of classes (adjust according to your dataset)
+nc: 1
+
+# Class names
 names:
   0: ball

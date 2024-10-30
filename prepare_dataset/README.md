@@ -1,6 +1,7 @@
 The instruction for preparing the TTNet dataset
 
 ## Prepare the dataset
+
 ### Download the dataset and unzip annotations
 
 ```shell script
@@ -10,13 +11,14 @@ python unzip.py
 ```
 
 ### Extract images from videos
+
 If you want to extract all images from videos, let's execute:
 
 ```shell script
 python extract_all_images.py
 ```
 
-As the authors mentioned in the original paper, images are extracted based on frames that has events. 
+As the authors mentioned in the original paper, images are extracted based on frames that has events.
 To extract frames based on the key annotated events, let's execute:
 
 ```shell script
@@ -25,7 +27,7 @@ python extract_selected_images.py
 
 **I highly recommend** to run the below command to extract frames that will use for the purpose of smooth labeling events (mentioned in the 5.1 part of the paper).
 
- ```shell script
+```shell script
 python extract_smooth_labellings.py
 ```
 
