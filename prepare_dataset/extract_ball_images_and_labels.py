@@ -2,40 +2,51 @@ import json
 import os
 import cv2
 
-MAX_IMAGES_PER_VIDEO = 50
+# Set max images for testing purposes
+MAX_IMAGES_PER_VIDEO = float('inf')
 
 # Split test images into 50% validation and 50% test
 
 train_json_files = [
     '../dataset/opentt/train/annotations/game_1/ball_markup.json',
-    # '../dataset/opentt/train/annotations/game_2/ball_markup.json',
-    # '../dataset/opentt/train/annotations/game_3/ball_markup.json',
-    # '../dataset/opentt/train/annotations/game_4/ball_markup.json',
-    # '../dataset/opentt/train/annotations/game_5/ball_markup.json'
+    '../dataset/opentt/train/annotations/game_2/ball_markup.json',
+    '../dataset/opentt/train/annotations/game_3/ball_markup.json',
+    '../dataset/opentt/train/annotations/game_4/ball_markup.json',
+    '../dataset/opentt/train/annotations/game_5/ball_markup.json'
 ]
 
 train_video_files = [
     '../dataset/opentt/train/videos/game_1.mp4',
-    # '../dataset/opentt/train/videos/game_2.mp4',
-    # '../dataset/opentt/train/videos/game_3.mp4',
-    # '../dataset/opentt/train/videos/game_4.mp4',
-    # '../dataset/opentt/train/videos/game_5.mp4'
+    '../dataset/opentt/train/videos/game_2.mp4',
+    '../dataset/opentt/train/videos/game_3.mp4',
+    '../dataset/opentt/train/videos/game_4.mp4',
+    '../dataset/opentt/train/videos/game_5.mp4'
 ]
 
 test_json_files = [
     '../dataset/opentt/test/annotations/test_1/ball_markup.json',
-    # '../dataset/opentt/test/annotations/test_2/ball_markup.json',
-    # '../dataset/opentt/test/annotations/test_3/ball_markup.json',
-    # '../dataset/opentt/test/annotations/test_4/ball_markup.json',
-    # '../dataset/opentt/test/annotations/test_5/ball_markup.json'
+    '../dataset/opentt/test/annotations/test_2/ball_markup.json',
+    '../dataset/opentt/test/annotations/test_3/ball_markup.json',
 ]
 
 test_video_files = [
     '../dataset/opentt/test/videos/test_1.mp4',
-    # '../dataset/opentt/test/videos/test_2.mp4',
-    # '../dataset/opentt/test/videos/test_3.mp4',
-    # '../dataset/opentt/test/videos/test_4.mp4',
-    # '../dataset/opentt/test/videos/test_5.mp4'
+    '../dataset/opentt/test/videos/test_2.mp4',
+    '../dataset/opentt/test/videos/test_3.mp4',
+]
+
+val_json_files = [
+    '../dataset/opentt/test/annotations/test_4/ball_markup.json',
+    '../dataset/opentt/test/annotations/test_5/ball_markup.json',
+    '../dataset/opentt/test/annotations/test_6/ball_markup.json',
+    '../dataset/opentt/test/annotations/test_7/ball_markup.json',
+]
+
+val_video_files = [
+    '../dataset/opentt/test/videos/test_4.mp4',
+    '../dataset/opentt/test/videos/test_5.mp4',
+    '../dataset/opentt/test/videos/test_6.mp4',
+    '../dataset/opentt/test/videos/test_7.mp4',
 ]
 
 # Create folders for images and labels if they don't exist
@@ -122,7 +133,7 @@ def extract_ball_images_and_labels(json_files, video_files, image_output_dir, la
 
 extract_ball_images_and_labels(
     train_json_files, train_video_files, train_image_dir, train_label_dir)
-# extract_ball_images_and_labels(
-#     test_json_files, test_video_files, test_image_dir, test_label_dir)
 extract_ball_images_and_labels(
-    test_json_files, test_video_files, val_image_dir, val_label_dir)
+    test_json_files, test_video_files, test_image_dir, test_label_dir)
+extract_ball_images_and_labels(
+    val_json_files, val_json_files, val_image_dir, val_label_dir)
