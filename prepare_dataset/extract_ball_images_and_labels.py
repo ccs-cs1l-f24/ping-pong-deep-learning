@@ -122,7 +122,7 @@ def extract_ball_images_and_labels(json_files, video_files, image_output_dir, la
 
 extract_ball_images_and_labels(
     train_json_files, train_video_files, train_image_dir, train_label_dir)
-extract_ball_images_and_labels(
-    test_json_files, test_video_files, test_image_dir, test_label_dir)
+# extract_ball_images_and_labels(
+#     test_json_files, test_video_files, test_image_dir, test_label_dir)
 extract_ball_images_and_labels(
     test_json_files, test_video_files, val_image_dir, val_label_dir)
