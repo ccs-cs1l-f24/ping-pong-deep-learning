@@ -3,4 +3,4 @@
 dataset/*
 
 runs/*
-train*
+train*/*
