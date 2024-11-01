@@ -3,7 +3,7 @@ import cv2
 import os
 
 # Load the YOLO model
-model = YOLO("../train/weights/best.pt")
+model = YOLO("best.pt")
 
 # Define directories
 images_dir = "../dataset/images/test"
@@ -68,7 +68,7 @@ for image_filename in os.listdir(images_dir):
     cv2.imshow("Ground Truth", image)
     
     # Wait for a key press
-    key = cv2.waitKey(0)
+    key = cv2.waitKey(30)
 
     if key == ord('q'):
         break
