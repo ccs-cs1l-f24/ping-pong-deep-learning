@@ -4,7 +4,7 @@ from ultralytics import YOLO
 model = YOLO("../train/weights/best.pt")  # pretrained YOLO11n model
 
 # Run batched inference on a list of images
-results = model(["pingpong.PNG"])  # return a list of Results objects
+results = model([r"C:\Users\dylan\Documents\Coding\ping-pong-deep-learning\dataset\images\test\test_1_frame_186.jpg"])  # return a list of Results objects
 
 # Process results list
 for result in results:

@@ -104,6 +104,14 @@ def extract_ball_images_and_labels(json_files, video_files, image_output_dir, la
             # Mark this frame as processed
             processed_frames[(video_file, frame_index)] = True
 
+            # Get the coordinates of the ball
+            x = position['x']
+            y = position['y']
+            
+            # Skip invalid frame
+            if x == -1 and y == -1:
+                continue
+
             cap.set(cv2.CAP_PROP_POS_FRAMES, frame_index)
             ret, frame = cap.read()
             if ret:
@@ -113,9 +121,6 @@ def extract_ball_images_and_labels(json_files, video_files, image_output_dir, la
                 if not os.path.exists(image_path):
                     cv2.imwrite(image_path, frame)
 
-                # Get the coordinates of the ball
-                x = position['x']
-                y = position['y']
 
                 # Normalize coordinates
                 x_center = x / image_width
@@ -136,4 +141,4 @@ extract_ball_images_and_labels(
 extract_ball_images_and_labels(
     test_json_files, test_video_files, test_image_dir, test_label_dir)
 extract_ball_images_and_labels(
-    val_json_files, val_json_files, val_image_dir, val_label_dir)
+    val_json_files, val_video_files, val_image_dir, val_label_dir)
