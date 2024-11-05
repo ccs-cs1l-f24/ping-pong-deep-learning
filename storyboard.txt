@@ -1,0 +1,42 @@
+User Story Boards:
+
+1. User is a ping pong amature who wants to improve their swing
+  - They use app to track their form during their games
+  - So that they can make incremental improvements to their technique
+
+2. User is a ping pong coach
+  - They use the app to record their students' games
+  - So that they can review game film and analyze what shots are weakest for them
+
+3. User is an intramural ping pong organizer who doesn't have enough referees
+  - They use the app to keep score automatically
+  - So that they don't have to hire student's to referee the game
+
+4. User is a student in a university making a presentation on the best ping pong serves
+  - They feed professional ping pong videos into the AI model
+  - So that they can create a clean visualization for their presentation (which can be viewed at any viewpoint)
+
+5. User is a parent who wants to record their child's ping pong games
+  - They record using the app
+  - So that they can get live annotations (ex. game score, who serves) without needing to take their eyes off the phone (which leads to bad recordings in my experience...)
+
+6. User is a VR enthusiast who loves watching live sports with their Meta Quest 3
+  - They view a 3D live stream that was generated through this AI model
+  - So that they can be fully immersed in the ping pong world finals
+
+7. User is a ping pong Instagram/Youtube influencer that wants to teach ping pong or attract more views
+  - They use the 3D visualization tool of their own games
+  - So that they can create a Youtube video that incorporates interesting and clean graphics
+
+8. User is a game designer who wants to create a ping pong game
+  - They feed professional ping pong games into the 3D visualizer
+  - So that they can properly animate their characters to make it look realistic
+
+9. User is an Apple Vision Pro user who enjoys calling his friends (who are always playing ping pong)
+  - The user joins the FaceTime and sees the 3D rendering of the game, with his friends' faces as user icons
+  - So that he can feel included in this activity even though he is miles always
+
+10. User is an AI engineer who wants to train robots to play ping pong
+  - They export all position data from a video feed using my model
+  - So that they can generate tons of data automatically (from real videos) into a format that a deep learning architecture would support
+  

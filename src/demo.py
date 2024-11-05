@@ -1,6 +1,6 @@
-from ultralytics import YOLO
-import cv2
 import os
+import cv2
+from ultralytics import YOLO
 
 # Load the YOLO model
 model = YOLO("best.pt")
@@ -17,7 +17,7 @@ for image_filename in os.listdir(images_dir):
     # Load image
     image_path = os.path.join(images_dir, image_filename)
     image = cv2.imread(image_path)
-    
+
     # Make a copy of the image for YOLO predictions
     yolo_image = image.copy()
 
@@ -28,7 +28,8 @@ for image_filename in os.listdir(images_dir):
             print(box)
             x_min, y_min, x_max, y_max = map(int, box.xyxy[0])
             # Draw YOLO predicted bounding box (in blue)
-            cv2.rectangle(yolo_image, (x_min, y_min), (x_max, y_max), (255, 0, 0), 2)
+            cv2.rectangle(yolo_image, (x_min, y_min),
+                          (x_max, y_max), (255, 0, 0), 2)
 
     # Load label
     label_filename = image_filename.rsplit('.', 1)[0] + '.txt'
@@ -46,7 +47,8 @@ for image_filename in os.listdir(images_dir):
                 print(f"Malformed label in {label_filename}, skipping...")
                 continue
 
-            class_id, x_center, y_center, bbox_width, bbox_height = map(float, parts)
+            class_id, x_center, y_center, bbox_width, bbox_height = map(
+                float, parts)
             img_height, img_width, _ = image.shape
 
             # Denormalize to pixel coordinates
@@ -56,8 +58,10 @@ for image_filename in os.listdir(images_dir):
             bbox_height_pixel = int(bbox_height * img_height)
 
             # Calculate top-left and bottom-right points of the bounding box
-            top_left = (x_center_pixel - bbox_width_pixel // 2, y_center_pixel - bbox_height_pixel // 2)
-            bottom_right = (x_center_pixel + bbox_width_pixel // 2, y_center_pixel + bbox_height_pixel // 2)
+            top_left = (x_center_pixel - bbox_width_pixel // 2,
+                        y_center_pixel - bbox_height_pixel // 2)
+            bottom_right = (x_center_pixel + bbox_width_pixel //
+                            2, y_center_pixel + bbox_height_pixel // 2)
 
             # Draw the bounding box on the image (in green)
             cv2.rectangle(image, top_left, bottom_right, (0, 255, 0), 2)
@@ -66,7 +70,7 @@ for image_filename in os.listdir(images_dir):
     cv2.imshow("YOLO Predictions", yolo_image)
     # Display Ground Truth
     cv2.imshow("Ground Truth", image)
-    
+
     # Wait for a key press
     key = cv2.waitKey(30)
 
